@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Atividade</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="container">
-
-    <form>
-      <h2>Estacionamento</h2>
-      <label class="a">Modelo: <input type="text" name="" id="modelo"></label>
-      <label class="a">Placa: <input type="text" name="" id="placa"></label>
-      <label class="a">Cor: <input type="text" name="" id="cor"></label>
-      <label class="a">Entrada: <input type="time" name="" id="entrada"></label>
-      <label class="a">Saída: <input type="time" name="" id="saida"></label>
-      <button type="submit">Estacionar Carro</button>
-      <button type="submit">Saída de Carro</button>
-      <button type="submit">Mostrar Carros Estacionados</button>
-    </form>
-
-    <table class="tabela" border="1">
-      <tr>
-        <td>MODELO</td>
-        <td>PLACA</td>
-        <td>COR</td>
-        <td>ENTRADA</td>
-        <td>SAIDA</td>
-      </tr>
-    </table>
-
-  </div>
-
-  
+    <div class="container">
+        <div class="Corpo">
+            <h1>Estacionamento</h1>
+            <article>Modelo <input type="text" id="modelo" ></article>
+            <br/>
+            <article>Placa <input type="text" id="placa" ></article>
+            <br/>
+            <article>Cor <input type="text" id="cor" ></article>
+            <br/>
+            <article>Entrada <input type="time" id="entrada"></article>
+            <br/>
+            <article>Saída <input type="time" id="saida"></article>
+            <br/>
+            
+            <button onclick="Estacionar()">Estacionar Carro</button>
+            <button onclick="Saida()">Saída do Carro</button>
+            <button onclick="Mostrar()">Mostrar Carros Estacionados</button>
+        </div>
+    </div>
 
 
-  <script src="index.js"></script>
+
+
+    <div class="tab">
+        <table id="table" border="2px solid black">
+         <thead>
+          <td>Modelo</td>
+          <td>Placa</td>
+          <td>Cor</td>
+          <td>Entrada</td>
+          <td>Saída</td>
+         </thead>  
+        </table>
+    </div>
+
+    <script src="./index.js"></script>
 </body>
 </html>

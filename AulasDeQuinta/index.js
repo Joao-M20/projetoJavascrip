@@ -1,37 +1,62 @@
 let dados = []
 
-function criarBase() {
-    let modelo = document.getElementById("modelo").value
-    let placa = document.getElementById("placa").value
-    let cor = document.getElementById("cor").value
-    let entrada = document.getElementById("entrada").value
+console.log(dados);
+
+function Estacionar() {
+    let modelo = document.getElementById('modelo').value;
+    let placa = document.getElementById('placa').value;
+    let cor = document.getElementById('cor').value;
+    let entrada = document.getElementById('entrada').value;
+    let saida = document.getElementById('saida').value;
 
     let objeto = {
-        nome: `${nome}`,
-        rgm: `${rgm}`,
-        faltas: `${faltas}`
+        modelo: `${modelo}`,
+        placa: `${placa}`,
+        cor: `${cor}`,
+        entrada: `${entrada}`,
+        saida: `${saida}`
     }
 
     dados.push(objeto)
-
-    console.log(dados);
 }
 
-function criarTabela() {
-    document.getElementById("corpotabela").innerHTML = ""
+function Saida() {
+    
+    let entrada = dados[0].entrada
+    let saida = dados[0].saida
 
-    dados.forEach(function(element, index){
-        let tabela = document.getElementById("corpotabela")
-        let tr = document.createElement('tr') //tr para tabela
+    
+    let Nentrada = Number(entrada.split(':')[0])
+    let Nsaida = Number(saida.split(':')[0])
+    
+    let calculo = 5 + (2 * (Nsaida - Nentrada))
+
+    alert(`O usuario vai pagar ${calculo}`)
+}
+
+function Mostrar() {
+
+    let table = document.getElementById('table');       //tabela do html, onde vamos inserir os dados.
+    let tabela;
+
+    if (dados == 0) {
+        alert("Primeiro Estacione o carro. Clique em Estacionar Carro")
+    } else {
+
+        dados.forEach(element => {
+            table
+        });
+
         
-        tr.innerHTML = `
+        let tabela = table.innerHTML + `
             <tr>
-                <td>${dados[index].nome}</td>
-                <td>${dados[index].rgm}</td>
-                <td>${dados[index].faltas}</td>
+                <td>${dados[0].modelo}</td>
+                <td>${dados[0].placa}</td>
+                <td>${dados[0].cor}</td>
+                <td>${dados[0].entrada}</td>
+                <td>${dados[0].saida}</td>
             </tr>
         `
-
-        tabela.appendChild(tr)
-    })
+        table.innerHTML = tabela
+    }    
 }
